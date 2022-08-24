@@ -1,0 +1,200 @@
+{
+    // Check ESlint config for conflict with Prettier
+    // >> npx eslint-config-prettier .eslintrc.json
+    /* @ ESlint Config ———————————————————————————— */
+    "env": {
+        "browser": true,
+        "es2020": true,
+        "node": true,
+        "jquery": true
+    },
+    "extends": [
+        "standard"
+        // "prettier"
+    ],
+    "plugins": [],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    /* @ Rules ———————————————————————————————————— */
+    "rules": {
+        "operator-linebreak": [
+            2,
+            "after"
+        ],
+        // Максимальная длина строки
+        "max-len": 0,
+        // Кавычки
+        "quotes": [
+            2,
+            "double",
+            {
+                "avoidEscape": true,
+                "allowTemplateLiterals": true
+            }
+        ],
+        // Заключения в кавычки имен свойств литерала объекта
+        "quote-props": [
+            "error",
+            "consistent-as-needed"
+        ],
+        // Отступ в начале строки
+        "indent": [
+            2,
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        // ";" в конце строки
+        "semi": [
+            2,
+            "always",
+            {
+                "omitLastInOneLineBlock": true
+            }
+        ],
+        // Многострочные строки
+        "no-multi-str": 2,
+        // Пустые строки
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 3,
+                "maxEOF": 2,
+                "maxBOF": 2
+            }
+        ],
+        // Не смешивать пробелы и табы
+        "no-mixed-spaces-and-tabs": 2,
+        // Завершающие пробелы в конце строки
+        "no-trailing-spaces": 2,
+        // Интервал до/после унарных операторов
+        "space-unary-ops": [
+            2,
+            {
+                "words": false,
+                "nonwords": false
+            }
+        ],
+        // Интервал до/после if-else
+        "keyword-spacing": [
+            2
+        ],
+        // Интервал для [a+b > a + b]
+        "space-infix-ops": 2,
+        // Постоянный интервал перед блоками
+        "space-before-blocks": [
+            2,
+            "always"
+        ],
+        "eol-last": [
+            1,
+            "always"
+        ],
+        // Пробел перед скобкой - function (x)
+        "space-before-function-paren": [
+            2,
+            {
+                "anonymous": "always",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+        // Пробел внутри скобок массива
+        "array-bracket-spacing": [
+            2,
+            "always"
+        ],
+        // Пробел внутри скобок
+        "space-in-parens": [
+            2,
+            "never"
+        ],
+        "object-property-newline": [
+            "error",
+            {
+                "allowAllPropertiesOnSameLine": true
+            }
+        ],
+        // Обработка ошибок в handling in callbacks (err, bs)
+        "n/handle-callback-err": [
+            1,
+            "^(err|error|anySpecificError)$"
+        ],
+        /* @ Other ———————————————————————————————————— */
+        // Проверка неиспользованной переменной
+        "no-unused-vars": 1,
+        // Проверка запятой в последовательности
+        "no-sequences": 0,
+        // Окончание строки LF/CRLF
+        "linebreak-style": 0,
+        // Упрощение импорта default as name
+        "import/no-named-default": 1,
+        // Тернарные операторы
+        "no-unused-expressions": [
+            "error",
+            {
+                "allowTernary": true,
+                "allowShortCircuit": true,
+                "allowTaggedTemplates": true,
+                "enforceForJSX": true
+            }
+        ],
+        // ALL NEW LINE OPTIONS
+        // "newline-after-var": 0,
+        // "newline-before-return": 0,
+        // "newline-per-chained-call": 0,
+        // "array-bracket-newline": 0,
+        // "array-element-newline": 0,
+        // "function-paren-newline": 0,
+        // "object-property-newline": 0,
+        // "function-call-argument-newline": 0
+        "object-curly-newline": [
+            "error",
+            {
+                "ObjectExpression": {
+                    "multiline": true,
+                    "minProperties": 3,
+                    "consistent": true
+                },
+                "ObjectPattern": {
+                    "multiline": false
+                },
+                "ImportDeclaration": "never",
+                "ExportDeclaration": {
+                    "multiline": false,
+                    "minProperties": 3
+                }
+            }
+        ]
+    },
+    /* @ Overrides ———————————————————————————————— */
+    "overrides": [
+        {
+            "files": [
+                "*.js",
+                "*.cjs"
+            ],
+            "rules": {
+                "lines-around-comment": [
+                    "warn",
+                    {
+                        "beforeBlockComment": true,
+                        "afterBlockComment": false,
+                        "beforeLineComment": true,
+                        "afterLineComment": false,
+                        "allowBlockStart": true,
+                        "allowBlockEnd": true,
+                        "allowObjectStart": true,
+                        "allowObjectEnd": true,
+                        "allowArrayStart": true,
+                        "allowArrayEnd": true
+                    }
+                ]
+            }
+        }
+    ]
+}

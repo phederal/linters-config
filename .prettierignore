@@ -1,0 +1,6 @@
+# Basic folders
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+**/public

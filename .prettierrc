@@ -1,0 +1,26 @@
+{
+    "trailingComma": "none",
+    "singleQuote": false,
+    "quoteProps": "as-needed",
+    "printWidth": 80,
+    "tabWidth": 4,
+    "useTabs": true,
+    "endOfLine": "auto",
+    "semi": true,
+    "bracketSpacing": true,
+    "bracketSameLine": true,
+    "arrowParens": "always",
+    "proseWrap": "never",
+    "overrides": [
+        {
+            "files": [
+                "*.js",
+                "*.cjs"
+            ],
+            "options": {
+                "trailingComma": "none",
+                "parser": "babel-flow"
+            }
+        }
+    ]
+}
